@@ -1846,6 +1846,7 @@ RECOVERYIMAGE_ID_FILE := $(PRODUCT_OUT)/recovery.id
 define build-recoveryramdisk
   @echo -e ${CL_GRN}"----- Generating Changelog ------"${CL_RST}
   $(hide) ./vendor/aosip/tools/changelog.sh
+  $(hide) ./vendor/aosip/tools/generate_json_build_info.sh $(AOSIP_TARGET_PACKAGE)
   $(hide) mkdir -p $(TARGET_RECOVERY_OUT)
   $(hide) mkdir -p $(TARGET_RECOVERY_ROOT_OUT)/sdcard $(TARGET_RECOVERY_ROOT_OUT)/tmp
   # Copying baseline ramdisk...
