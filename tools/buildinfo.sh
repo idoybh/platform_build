@@ -61,6 +61,6 @@ if [ -n "$BUILD_THUMBPRINT" ] ; then
   echo "ro.build.thumbprint=$BUILD_THUMBPRINT"
 fi
 
-echo "ro.aosip.device=$AOSIP_DEVICE"
+echo "ro.derp.device=$DERP_DEVICE"
 
 echo "# end build properties"

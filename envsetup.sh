@@ -142,8 +142,8 @@ function check_product()
         echo "Couldn't locate the top of the tree.  Try setting TOP." >&2
         return
     fi
-    if (echo -n $1 | grep -q -e "^aosip_") ; then
-        AOSIP_BUILD=$(echo -n $1 | sed -e 's/^aosip_//g')
+    if (echo -n $1 | grep -q -e "^derp_") ; then
+        AOSIP_BUILD=$(echo -n $1 | sed -e 's/^derp_//g')
     else
         AOSIP_BUILD=
     fi
