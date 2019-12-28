@@ -143,11 +143,11 @@ function check_product()
         return
     fi
     if (echo -n $1 | grep -q -e "^derp_") ; then
-        AOSIP_BUILD=$(echo -n $1 | sed -e 's/^derp_//g')
+        DERP_BUILD=$(echo -n $1 | sed -e 's/^derp_//g')
     else
-        AOSIP_BUILD=
+        DERP_BUILD=
     fi
-    export AOSIP_BUILD
+    export DERP_BUILD
 
         TARGET_PRODUCT=$1 \
         TARGET_BUILD_VARIANT= \
@@ -653,7 +653,7 @@ function lunch()
     check_product $product
     if [ $? -ne 0 ]
     then
-        # if we can't find a product, try to grab it off the AOSiP-Devices GitHub
+        # if we can't find a product, try to grab it off the DerpLab GitHub
         T=$(gettop)
         cd $T > /dev/null
         vendor/aosip/build/tools/roomservice.py $product
